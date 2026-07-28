@@ -22,8 +22,6 @@
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
 
-
-
 <style>
 
 /*======================================
@@ -43,20 +41,6 @@
   margin-left: 10px;
 }
 
-
-.skill-mf .progress {
-  /* background-color: #cde1f8; */
-  margin: .5rem 0 1.2rem 0;
-  border-radius: 0;
-  height: .7rem;
-}
-
-.skill-mf .progress .progress-bar {
-  height: .7rem;
-  background-color: #ffbd39;
-}
-
-
 /* Animation styles */
 #typing-animation {
   position: relative;
@@ -70,7 +54,6 @@
 
 #typing-animation:before {
   content: "";
-  /* position: absolute; */
   top: 0;
   left: 0;
   width: 0;
@@ -80,26 +63,16 @@
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 @keyframes typing-cursor {
-  from {
-    width: 5px;
-  }
-  to {
-    width: 0;
-  }
+  from { width: 5px; }
+  to { width: 0; }
 }
 
-
 /* project image zoom effect */
-
 .zoom-effect {
   overflow: hidden;
   transition: transform 0.3s ease-out;
@@ -109,13 +82,87 @@
   transform: scale(1.1);
 }
 
+/* ======================================
+   SKILLS TAG/PILL STYLE
+====================================== */
+.skills-section {
+  margin-top: 1.5rem;
+}
+
+.skills-group {
+  margin-bottom: 1rem;
+}
+
+.skills-group-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ffbd39;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.skills-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-pill {
+  background-color: rgba(255, 189, 57, 0.12);
+  border: 1px solid rgba(255, 189, 57, 0.35);
+  color: #e0e0e0;
+  border-radius: 20px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* ======================================
+   PROJECTS 2x2 GRID
+====================================== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card .blog-entry {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ======================================
+   EXPERIENCE SECTION
+====================================== */
+.section-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #ffbd39;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.25rem;
+  display: block;
+}
 
 </style>
 
-
   </head>
   <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
-	  
 	  
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
 	    <div class="container">
@@ -126,7 +173,6 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav nav ml-auto">
-	          <!-- <li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li> -->
 	          <li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
 	          <li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
 	          <li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
@@ -135,78 +181,12 @@
 	      </div>
 	    </div>
 	  </nav>
-	  <!-- <section id="home-section" class="hero"> -->
-		  <!-- <div class="home-slider  owl-carousel"> -->
-	       <!-- <div class="slider-item "> -->
-	      	<!-- <div class="overlay"></div> -->
-	         <!-- <div class="container"> -->
-	          <!-- <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true"> -->
-	          	<!-- <div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.png);"> -->
-	          	 <!-- <div class="overlay"></div> -->
-	          	<!-- </div> -->
-		          <!-- <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }"> -->
-		          	<!-- <div class="text"> -->
-		          		<!-- <span class="subheading">Hello!</span> -->
-			            <!-- <h1 class="mb-4 mt-3">I'm <span>Rishabh Mishra</span></h1> -->
-
-						<!-- Element to contain animated typing -->
-						<!-- <span id="typing-animation"></span> -->
-
-						<!-- <script> -->
-
-						<!-- // Initialize the typing animation -->
-						<!-- const typingAnimationElement = document.getElementById('typing-animation'); -->
-
-						<!-- // Create an array of typing text -->
-						<!-- const typingTexts = [ -->
-						<!-- 'Engineer  ', -->
-						<!-- 'YouTuber  ', -->
-						<!-- 'Teacher   ', -->
-						<!-- ]; -->
-
-						<!-- // Create a function to display the typing animation for a given text -->
-						<!-- function playTypingAnimation(text) { -->
-						<!-- // Loop through each character and add it to the element -->
-						<!-- for (let i = 0; i < text.length; i++) { -->
-							<!-- setTimeout(() => { -->
-							<!-- typingAnimationElement.textContent += text[i]; -->
-							<!-- }, i * 200); // Increase the delay to slow down the typing animation -->
-						<!-- } -->
-
-						<!-- // Once the animation is complete, reset the text and start over -->
-						<!-- setTimeout(() => { -->
-							<!-- typingAnimationElement.textContent = ''; -->
-							<!-- playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]); -->
-						<!-- }, text.length * 200); -->
-						<!-- } -->
-
-						<!-- // Start the typing animation loop -->
-						<!-- playTypingAnimation(typingTexts[0]); -->
-
-						<!-- </script> -->
-
-						<!-- <br> -->
-						<!-- <br> -->
-			            <!-- <h2>A Senior Data Analyst</h2> -->
-						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-						<!-- <br> -->
-			            <!-- <p><a href="https://www.youtube.com/@RishabhMishraOfficial" class="btn btn-primary py-3 px-4">YouTube</a>  -->
-							<!-- <a href="https://github.com/rishabhnmishra" class="btn btn-white btn-outline-white py-3 px-4">My works</a></p> -->
-		            </div>
-		          </div>
-	        	</div>
-	        </div>
-	      </div>
-		</div>
-    </section>
-
 
 
     <section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
     	<div class="container">
 			<div class="row">
 				<div class="row d-flex align-items-stretch">
-				<!-- <div class="row d-flex"> -->
 					<div class="col-md-6 col-lg-5 d-flex">
 						<div class="img-about img d-flex align-items-stretch">
 							<div class="overlay">
@@ -216,49 +196,67 @@
 										<img src="images/about-me.PNG" class="img-fluid rounded b-shadow-a" alt="">
 									  </div>
 									</div>
-									<!-- Details next to profile image -->
 									<div class="col-sm-6 col-md-7">
 									  <div class="about-info">
-										<p><span class="title-s">Name: </span> <span>Anugraha Jayakumar </span></p>
-										<!-- <p><span class="title-s">Job Role: </span> <span>Senior Data Analyst</span></p> -->
-										<p><span class="title-s">Experience: </span> <span>1 Year </span></p>
-										<p><span class="title-s">Address: </span> <span>Chennai, India</span></p>
+										<p><span class="title-s">Name: </span> <span>Anugraha Jayakumar</span></p>
+										<p><span class="title-s">Experience: </span> <span>1 Year 6 Months</span></p>
+										<p><span class="title-s">Location: </span> <span>Chennai / Bangalore / Hyderabad</span></p>
 									  </div>
 									</div>
 								  </div>
 
-								<div class="skill-mf">
+								<div class="skills-section">
 									<p class="title-s">Skills</p>
-									<span>SQL</span> <span class="pull-right">70%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="95" aria-valuemin="0"
-											aria-valuemax="100"></div>
+
+									<div class="skills-group">
+										<span class="skills-group-label">Languages</span>
+										<div class="skills-pills">
+											<span class="skill-pill">Python</span>
+											<span class="skill-pill">SQL</span>
+											<span class="skill-pill">R</span>
+										</div>
 									</div>
-									
-									<span>R </span> <span class="pull-right">60%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 60%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
+
+									<div class="skills-group">
+										<span class="skills-group-label">Machine Learning</span>
+										<div class="skills-pills">
+											<span class="skill-pill">scikit-learn</span>
+											<span class="skill-pill">Regression</span>
+											<span class="skill-pill">Classification</span>
+											<span class="skill-pill">Feature Engineering</span>
+										</div>
 									</div>
-									
-									<span>Data Visualization</span> <span class="pull-right">70%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="90" aria-valuemin="0"
-											aria-valuemax="100"></div>
+
+									<div class="skills-group">
+										<span class="skills-group-label">GenAI &amp; LLM</span>
+										<div class="skills-pills">
+											<span class="skill-pill">Groq API</span>
+											<span class="skill-pill">LLaMA 3.3</span>
+											<span class="skill-pill">Prompt Engineering</span>
+										</div>
 									</div>
-									
-									<span>Statistical Analysis</span> <span class="pull-right">75%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="85" aria-valuemin="0"
-											aria-valuemax="100"></div>
+
+									<div class="skills-group">
+										<span class="skills-group-label">Visualisation &amp; BI</span>
+										<div class="skills-pills">
+											<span class="skill-pill">Power BI</span>
+											<span class="skill-pill">Tableau</span>
+											<span class="skill-pill">Matplotlib</span>
+											<span class="skill-pill">Seaborn</span>
+										</div>
 									</div>
-									
-									<span>Machine Learning</span> <span class="pull-right">70%</span>
-									<div class="progress">
-										<div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="80" aria-valuemin="0"
-											aria-valuemax="100"></div>
+
+									<div class="skills-group">
+										<span class="skills-group-label">Tools</span>
+										<div class="skills-pills">
+											<span class="skill-pill">Git/GitHub</span>
+											<span class="skill-pill">Jupyter Notebook</span>
+											<span class="skill-pill">EasyOCR</span>
+											<span class="skill-pill">MS Excel</span>
+										</div>
 									</div>
 								</div>
+
 							</div>
 						</div>
 					</div>
@@ -270,29 +268,20 @@
 								<h1 class="big">About</h1>
 								<h2 class="mb-4">About Me</h2>
 								
-								<p>Aspiring data analyst with a strong background in Economics and a passion for turning data into actionable insights. 
-									Proficient in SQL, R programming, and MS Office, I enjoy exploring patterns, solving complex problems, and delivering data-driven solutions. 
-									With experience in financial analysis, market research, and predictive modeling, I am excited to connect, collaborate, and grow in the world of analytics!</p>
+								<p>Data scientist with 1 year of professional experience at NielsenIQ, where I worked with ML pipelines, OCR-based product classification, and large-scale FMCG data. I bring an economics foundation (M.Sc. Economics, NMIMS Mumbai) to data problems — translating analytical rigour into machine learning models, automated insight generation, and clean, actionable reporting. I'm comfortable across the full pipeline, from data validation and feature engineering to LLM-powered business summaries and agentic querying layers. Currently based in Chennai and open to opportunities in Bangalore and Hyderabad.</p>
+
 								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Profile:</span> <span>Data Science &amp; Analytics</span></li>
-									<!-- <li class="d-flex"><span>Domain:</span> <span>Retail, Ecommerce, BFSI &amp; Digital Marketing</span></li> -->
-									<li class="d-flex"><span>Education:</span> <span>M.Sc.Economics</span></li>
-									<li class="d-flex"><span>Language:</span> <span>English, Hindi, Malayalam, Tamil</span></li>
-									<li class="d-flex"><span>BI Tools:</span> <span>Microsoft Power BI &amp; Tableau</span></li>
-									<!-- <li class="d-flex"><span>Other Skills:</span> <span>Cloud, PySpark, Excel, Git, JIRA, Google Analytics &amp; SEO</span></li> -->
+									<li class="d-flex"><span>Profile:</span> <span>Data Scientist &amp; Analytics</span></li>
+									<li class="d-flex"><span>Education:</span> <span>M.Sc. Economics, NMIMS Mumbai</span></li>
+									<li class="d-flex"><span>Languages:</span> <span>English, Hindi, Malayalam, Tamil</span></li>
+									<li class="d-flex"><span>Tech Stack:</span> <span>Python, SQL, Power BI, Tableau, scikit-learn, Groq API, LLaMA, Prompt Engineering</span></li>
 									<li class="d-flex"><span>Interest:</span> <span>Weightlifting, Cooking, Home Decor</span></li>
-									
 								</ul>
 							</div>
 						</div>
 
-
 						<div class="counter-wrap ftco-animate d-flex mt-md-3">
 							<div class="text">
-								<p class="mb-4">
-									<!-- <span class="number" data-number="30">0</span> <span>+</span> -->
-									<!-- <span>&nbsp; Projects completed</span> -->
-								</p>
 								<p><a href="https://www.linkedin.com/in/anugraha-jayakumar-9b751424b" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
 							</div>
 						</div>
@@ -303,18 +292,44 @@
     </section>
 
 
-
-	
     <section class="ftco-section ftco-no-pb" id="resume-section">
     	<div class="container">
     		<div class="row justify-content-center pb-5">
           <div class="col-md-10 heading-section text-center ftco-animate">
           	<h1 class="big big-2">Resume</h1>
             <h2 class="mb-4">Resume</h2>
-            <p>Economics post-graduate with skills in financial modeling, data analytics, and market research. Proficient in SQL, R, Power BI, and Tableau, I have hands-on experience in predictive modeling, regression analysis, and financial insights. My background includes analyzing financial statements, market trends, and economic indicators to deliver data-driven solutions.</p>
+            <p>Data scientist with an economics post-graduate background and hands-on experience building ML pipelines, OCR-based classification tools, and LLM-powered analytics. Proficient in Python, SQL, scikit-learn, Power BI, and Tableau, with domain depth in FMCG retail data.</p>
           </div>
         </div>
 
+		<!-- EXPERIENCE -->
+		<div class="row">
+			<h1 class="big-4">Experience</h1>
+			<div class="underline"></div>
+		</div>
+		<br>
+
+		<div class="row">
+			<div class="col-md-12">
+				<div class="resume-wrap ftco-animate">
+					<span class="date">May 2025 - June 2026</span>
+					<h2>Data Processing Analyst</h2>
+					<span class="position">NielsenIQ, Chennai</span>
+					<ul class="mt-3">
+						<li>Validated and cleaned large-scale Italian supermarket retail data across class and macro-class product hierarchies, maintaining data integrity within NielsenIQ's central European database.</li>
+						<li>Contributed to the deployment and validation of a Python-based product-classification tool (EasyOCR, PyTorch, Transformers) that extracts product text from retail flyer images and delivers confidence-ranked category predictions — verified functionality across team installations and led the validation process that confirmed accuracy before team-wide rollout.</li>
+						<li>Collaborated cross-functionally to identify and resolve data inconsistencies, ensuring downstream reporting accuracy for European FMCG clients.</li>
+						<li>Recognised with the Best Quality Award twice within the first year for delivering consistently high-accuracy data validation in a high-volume retail data environment.</li>
+						<li>Selected for the Efficiency Committee just two months after joining, based on demonstrated analytical rigour and initiative during the onboarding period.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<br>
+		<br>
+
+		<!-- INTERNSHIPS -->
 		<div class="row">
 			<h1 class="big-4">Internships</h1>
 			<div class="underline"></div>
@@ -322,92 +337,68 @@
 		<br>
 		
 		<div class="row">
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">May-July 2023</span>
-						<h2>Research Intern</h2>
-						<span class="position">Trumsy, Delhi</span>
-						<!-- <p class="mt-4">.  -->
-							<ul>
-								<li>Worked as a research intern to understand the screen-time usage of tweens (aged 7 to 12) by conducting surveys with parents, collecting and analysing data, and preparing a report based on the acquired data. </li>
-								<!-- <li>Developed time series forecasting models to predict sales and optimize marketing budgets, got model performance of 92%.</li> -->
-								<!-- <li>Designed and executed A/B tests, performed rigorous statistical analysis. Led to 20% MoM increase in the conversion rate.</li> -->
-							</ul>
-						</p>
-					</div>
-
-				</div>
-
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">Feb- April 2023</span>
-						<h2>Business Analyst Intern</h2>
-						<span class="position">Finlatics, Mumbai </span>
-						<!-- <p class="mt-4"> -->
-							<ul>
-								<li>Applied data analytics to research projects in Consumer Goods, Banking, and E-Commerce sectors.</li>
-								<li>Developed interactive Power BI dashboards for data visualization.</li>
-								<!-- <li>Performed migration and enhancements for merchandising dashboard, involved data integration and its feature improvement.</li> -->
-							</ul>
-						</p>
-					</div>
-
-				</div>
-				<div class="col-md-6">
-					<div class="resume-wrap ftco-animate">
-						<span class="date">April- Sept 2021</span>
-						<h2>Finance Intern</h2>
-						<span class="position">Hedge Equities, Kochi </span>
-						<!-- <p class="mt-4"> -->
-							<ul>
-								<li>Monitored daily fluctuations in currencies, indices, and commodities, providing market insights.</li>
-								<li>Conducted fundamental analysis of State Bank of India.</li>
-								<!-- <li>Performed migration and enhancements for merchandising dashboard, involved data integration and its feature improvement.</li> -->
-							</ul>
-						</p>
-					</div>
-
+			<div class="col-md-6">
+				<div class="resume-wrap ftco-animate">
+					<span class="date">May–July 2023</span>
+					<h2>Research Intern</h2>
+					<span class="position">Trumsy, Delhi</span>
+					<ul class="mt-3">
+						<li>Worked as a research intern to understand the screen-time usage of tweens (aged 7 to 12) by conducting surveys with parents, collecting and analysing data, and preparing a report based on the acquired data.</li>
+					</ul>
 				</div>
 			</div>
 
+			<div class="col-md-6">
+				<div class="resume-wrap ftco-animate">
+					<span class="date">Feb–April 2023</span>
+					<h2>Business Analyst Intern</h2>
+					<span class="position">Finlatics, Mumbai</span>
+					<ul class="mt-3">
+						<li>Applied data analytics to research projects in Consumer Goods, Banking, and E-Commerce sectors.</li>
+						<li>Developed interactive Power BI dashboards for data visualization.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
 		<br>
 		<br>
 
+		<!-- EDUCATION -->
 		<div class="row">
 			<h1 class="big-4">Education</h1>
 			<div class="underline"></div>
 		</div>
 		<br>
 		
-			<div class="row">
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2022-2024</span>
-    					<h2>M.Sc. Economics</h2>
-    					<span class="position">NMIMS, Mumbai</span>
-    					<p class="mt-4">CGPA: 3.1/4 </p>
-    				</div>
-    			</div>
-
-    			<div class="col-md-6">
-    				<div class="resume-wrap ftco-animate">
-    					<span class="date">2012-2013</span>
-    					<h2>B.A Corporate Economics</h2>
-    					<span class="position">Women's Christian College, Chennai</span>
-    					<p class="mt-4">CGPA: 8.5/10 </p>
-    				</div>
-				</div>
-    		</div>
-
-    		<div class="row justify-content-center mt-5">
-    			<div class="col-md-6 text-center ftco-animate">
-    				<p><a href="https://drive.google.com/file/d/18Zi61mW7Q1YKHHZEJbZtZ9rECpqUqht6/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-4 px-5">Download CV</a></p>
+		<div class="row">
+    		<div class="col-md-6">
+    			<div class="resume-wrap ftco-animate">
+    				<span class="date">2022–2024</span>
+    				<h2>M.Sc. Economics</h2>
+    				<span class="position">NMIMS, Mumbai</span>
+    				<p class="mt-4">CGPA: 3.1/4</p>
     			</div>
     		</div>
+
+    		<div class="col-md-6">
+    			<div class="resume-wrap ftco-animate">
+    				<span class="date">2019–2022</span>
+    				<h2>B.A. Corporate Economics</h2>
+    				<span class="position">Women's Christian College, Chennai</span>
+    				<p class="mt-4">CGPA: 8.5/10</p>
+    			</div>
+			</div>
+    	</div>
+
+    	<div class="row justify-content-center mt-5">
+    		<div class="col-md-6 text-center ftco-animate">
+    			<p><a href="https://docs.google.com/document/d/1zOWO-em0c1kWcSq9uuTKZipJ62ZIPtKaqaUxxSunZ-U/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-primary py-4 px-5">Download CV</a></p>
+    		</div>
+    	</div>
     	</div>
     </section>
 
-   
 
     <section class="ftco-section" id="project-section">
       <div class="container">
@@ -415,126 +406,77 @@
           <div class="col-md-7 heading-section text-center ftco-animate">
             <h1 class="big big-2">Projects</h1>
             <h2 class="mb-4">Projects</h2>
-            <p>Below are the sample Data Analytics projects on Power BI & ML.</p>
+            <p>Data Science, Machine Learning &amp; Analytics projects across FMCG, retail, HR, and finance.</p>
           </div>
         </div>
-        <div class="row d-flex">
-          <div class="col-md-4 d-flex ftco-animate">
+
+        <div class="projects-grid">
+
+          <!-- Project 1: FMCG Sales Intelligence -->
+<div class="project-card ftco-animate">
+  <div class="blog-entry justify-content-end">
+    <a href="https://github.com/AnugrahaJ/favorita-sales-intelligence-tool" target="_blank" rel="noopener noreferrer" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; height: 285px; display: block; width: 100%; border-radius: 6px;">
+    </a>
+    <div class="text mt-3 float-right d-block">
+      <h3 class="heading"><a href="https://github.com/AnugrahaJ/favorita-sales-intelligence-tool" target="_blank" rel="noopener noreferrer">AI-Powered FMCG Sales Intelligence Tool</a></h3>
+      <p>End-to-end sales forecasting on the Favorita retail dataset. Built a Linear Regression model with lag features (RMSE reduced from ~1,790 to ~1,199), integrated Groq API with LLaMA 3.3 70B for automatic natural-language business insights, and added an agentic querying layer for natural-language dataframe exploration.</p>
+    </div>
+  </div>
+</div>
+          <!-- Project 2: Product Category Classifier -->
+          <div class="project-card ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/AnugrahaJ/Employee-Attrition-Prediction-Model" class="block-20 zoom-effect" style="background-image: url('images/proj_1.jpg');">
+              <a href="https://github.com/AnugrahaJ/product-category-classifier" target="_blank" rel="noopener noreferrer" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; height: 270px; display: block; width: 100%; border-radius: 6px;">
               </a>
               <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/AnugrahaJ/Employee-Attrition-Prediction-Model">Employee Attrition Prediction Model using R</a></h3>
-                <p>Build a predictive model to assess employee attrition based on factors like job satisfaction, performance, workload, salary, and more.</p>
+                <h3 class="heading"><a href="https://github.com/AnugrahaJ/product-category-classifier" target="_blank" rel="noopener noreferrer">Product Category Classifier from Package Images</a></h3>
+                <p>OCR + ML pipeline mirroring the enterprise tool validated at NielsenIQ. Uses EasyOCR to extract product text from images, then a TF-IDF + Logistic Regression classifier to predict product category with confidence-ranked suggestions. Built on the Open Food Facts dataset; extended to a pretrained Transformer model for comparison.</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 d-flex ftco-animate">
+
+          <!-- Project 3: Employee Attrition -->
+          <div class="project-card ftco-animate">
           	<div class="blog-entry justify-content-end">
-              <a href="https://github.com/AnugrahaJ/Zomato_Resturants_Insight_Dashboard" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg');">
+              <a href="https://github.com/AnugrahaJ/Employee-Attrition-Prediction-Model" target="_blank" rel="noopener noreferrer" class="block-20 zoom-effect" style="background-image: url('images/proj_2.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; height: 260px; display: block; width: 100%; border-radius: 6px;">
               </a>
               <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/AnugrahaJ/Zomato_Resturants_Insight_Dashboard">Data on a Plate: Zomato’s Bangalore Story</a></h3>
-                <p>A Power BI deep dive into restaurant performance, pricing hotspots, and top-rated eateries across the city.</p>
+                <h3 class="heading"><a href="https://github.com/AnugrahaJ/Employee-Attrition-Prediction-Model" target="_blank" rel="noopener noreferrer">Employee Attrition Prediction Model</a></h3>
+                <p>Predictive ML classification model built in R to assess employee attrition risk based on job satisfaction, performance, workload, and salary. Identifies key drivers of attrition to support data-driven HR decisions.</p>
               </div>
             </div>
           </div>
-          <div class="col-md-4 d-flex ftco-animate">
+
+          <!-- Project 4: Credit Card Dashboard -->
+          <div class="project-card ftco-animate">
           	<div class="blog-entry">
-              <a href="https://github.com/AnugrahaJ/Credit-Card-Transaction-Dashboard-" class="block-20 zoom-effect" style="background-image: url('images/proj_3.jpg');">
+              <a href="https://github.com/AnugrahaJ/Credit-Card-Transaction-Dashboard-" target="_blank" rel="noopener noreferrer" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg'); background-size: cover; background-position: center center; background-repeat: no-repeat; height: 260px; display: block; width: 100%; border-radius: 6px;">
               </a>
               <div class="text mt-3 float-right d-block">
-
-                <h3 class="heading"><a href="https://github.com/AnugrahaJ/Credit-Card-Transaction-Dashboard-">Credit Card Transaction Dashboard</a></h3>
-                <p>Power BI dashboard tracking transaction trends, customer segments, and financial health through spending patterns & balance metrics.</p>
+                <h3 class="heading"><a href="https://github.com/AnugrahaJ/Credit-Card-Transaction-Dashboard-" target="_blank" rel="noopener noreferrer">Credit Card Transaction Dashboard</a></h3>
+                <p>Power BI dashboard tracking transaction trends, customer segments, and financial health through spending patterns and balance metrics. Surfaces insights across income groups and card categories to guide business strategy.</p>
               </div>
             </div>
           </div>
-        </div>
-	<br>
-		<!-- added justify-content-center to center align the last two projects -->
-		<!-- <div class="row d-flex justify-content-center">  
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/rishabhnmishra/sales_forecasting/tree/main" class="block-20 zoom-effect" style="background-image: url('images/proj_4.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/rishabhnmishra/sales_forecasting/tree/main">Sales Forecast- Time Series Forecasting</a></h3>
-				  <p>Used multiple machine learning models to forecast sales (retail store) and performed time series analysis.</p>
-				</div>
-			  </div>
-			</div>
-			<div class="col-md-4 d-flex ftco-animate">
-				<div class="blog-entry justify-content-end">
-				<a href="https://github.com/rishabhnmishra/customer_segmentation/blob/main/Customer_Segmentation-final.ipynb" class="block-20 zoom-effect" style="background-image: url('images/proj_5.jpg');">
-				</a>
-				<div class="text mt-3 float-right d-block">
-  
-				  <h3 class="heading"><a href="https://github.com/rishabhnmishra/customer_segmentation/blob/main/Customer_Segmentation-final.ipynb">Customer Segmentation using clustering model</a></h3>
-				  <p>Developed a ML model to give various recommendations of financial products &amp; services on target customer groups.</p>
-				</div>
-			  </div>
-			</div>
-		 </div> -->
+
+        </div><!-- end projects-grid -->
+
 	  </div>
     </section>
 
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
-      <!-- <div class="container">
-		<div class="row d-md-flex align-items-center">
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="20">0</strong>
-                <span>Achievements</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="30">0</strong>
-                <span>Projects</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="1000">0</strong>
-                <span>Mentored Students</span>
-              </div>
-            </div>
-          </div>
-          <div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
-            <div class="block-18">
-              <div class="text">
-                <strong class="number" data-number="500">0</strong>
-                <span>Cups of coffee</span>
-              </div>
-            </div>
-          </div>
-        </div> -->
-      </div>
-	
 	  <div class="ftco-section ftco-hireme img margin-top" style="background-image: url(images/bg_1.jpg)">
-			<!-- <div class="container"> -->
-				<div class="row justify-content-center">
-					<div class="col-md-7 ftco-animate text-center">
-						<h2>More projects on<span> Github  </span> </h2>
-						<div class="heading"> <h4> I love to solve business problems &amp; uncover hidden data stories </h4>
-						<br>
-						<p><a href="https://github.com/AnugrahaJ" class="btn btn-primary py-3 px-5">GitHub</a></p>
-						</div>
+			<div class="row justify-content-center">
+				<div class="col-md-7 ftco-animate text-center">
+					<h2>More projects on<span> Github  </span> </h2>
+					<div class="heading"> <h4> I love to solve business problems &amp; uncover hidden data stories </h4>
+					<br>
+					<p><a href="https://github.com/AnugrahaJ" class="btn btn-primary py-3 px-5">GitHub</a></p>
 					</div>
 				</div>
-			<!-- </div> -->
+			</div>
 		</div>
 	</section>
-
 
 
     <section class="ftco-section contact-section ftco-no-pb" id="contact-section">
@@ -554,7 +496,7 @@
           			<span class="icon-map-signs"></span>
           		</div>
           		<h3 class="mb-4">Address</h3>
-	            <p>Chennai, India</p>
+	            <p>Alappuzha, Kerala -690503</p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -563,7 +505,7 @@
           			<span class="icon-phone2"></span>
           		</div>
           		<h3 class="mb-4">Contact Number</h3>
-	            <p><a href="tel://0101010101">+91 9150873925</a></p>
+	            <p><a href="tel://+919150873925">+91 9150873925</a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -572,7 +514,7 @@
           			<span class="icon-paper-plane"></span>
           		</div>
           		<h3 class="mb-4">Email Address</h3>
-	            <p><a href="mailto:info@yoursite.com">anugrahajay6@gmail.com</a></p>
+	            <p><a href="mailto:anugrahajay6@gmail.com">anugrahajay6@gmail.com</a></p>
 	          </div>
           </div>
           <div class="col-md-6 col-lg-3 d-flex ftco-animate">
@@ -581,7 +523,7 @@
           			<span class="icon-globe"></span>
           		</div>
           		<h3 class="mb-4">Download Resume</h3>
-	            <p><a href="https://drive.google.com/file/d/18Zi61mW7Q1YKHHZEJbZtZ9rECpqUqht6/view?usp=sharing" target="_blank" rel="noopener noreferrer">resumelink</a></p>
+	            <p><a href="https://docs.google.com/document/d/1zOWO-em0c1kWcSq9uuTKZipJ62ZIPtKaqaUxxSunZ-U/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Resume Link</a></p>
 	          </div>
           </div>
 
@@ -590,38 +532,16 @@
 			<br>
 			<div class="row justify-content-center">
 				<div class="col-md-7 ftco-animate text-center">
-					<!-- <h2>Have a<span> Question?  </span> <a href="https://forms.gle/uLaTShUKXraAvHJ77" class="btn btn-primary py-3 px-5">Click Here</a> </h2> -->
 				</div>
 			</div>
-				<br>
-					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
-					  <!-- <li class="ftco-animate normal-txt">Find me on  </li> -->
-					  <!-- <li class="ftco-animate"><a href="https://www.youtube.com/@RishabhMishraOfficial"><span class="icon-youtube"></span></a></li> -->
-					  <!-- <li class="ftco-animate"><a href="https://www.linkedin.com/in/rishabhnmishra/"><span class="icon-linkedin"></span></a></li>   -->
-					  <!-- <li class="ftco-animate"><a href="https://twitter.com/rishabhnmishra"><span class="icon-twitter"></span></a></li> -->
-					  <!-- <li class="ftco-animate"><a href="https://twitter.com/rishabhnmishra"><span class="icon-facebook"></span></a></li> -->
-				      <!-- <li class="ftco-animate"><a href="https://www.instagram.com/rishabhnmishra/"><span class="icon-instagram"></span></a></li> -->
-					</ul>
-				<br>
+			<br>
+				<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+				</ul>
+			<br>
 		   </div>
    </div>
  </section>
 
-
- 
-	
-    <footer class="ftco-footer ftco-section">
-		<div class="container">
-		  <div class="row">
-			<div class="col-md-12 text-center">
-  
-			  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-	Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-	<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
-			</div>
-		  </div>
-		</div>
-	  </footer>
 
 
   <!-- loader -->
@@ -640,7 +560,6 @@
   <script src="js/aos.js"></script>
   <script src="js/jquery.animateNumber.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  
   <script src="js/main.js"></script>
     
   </body>
